@@ -3,6 +3,7 @@ import time
 from Lista import listaSimple
 
 Ordenes = listaSimple()
+#Tiempo = listaTiempo()
 
 def Menu():
     print('')
@@ -39,9 +40,11 @@ def Menu():
 '''-----------------------PARA LA PIZZA-----------------------'''
 def agregarOrden():
     opcionPedir = str(input('\nIngrese la pizza que desea.\n'))
+    #opcionTiempo = str(input('\nIngrese el tiempo estimado.\n'))
     if opcionPedir == "":
        limpiarConsola()
        Menu()
+    #Tiempo.AgregarT(opcionTiempo)
     Ordenes.Agregar(opcionPedir)
     limpiarConsola()
 
@@ -59,6 +62,7 @@ def sacarOrden():
         limpiarConsola()
         Menu()
     ordenx = Ordenes.Retirar()
+    #tiempox = Tiempo.RetirarT()
     input('Pizza de ' + str(ordenx.item) + ' entregada. Presione Enter para regresar al Menú.\n')
     limpiarConsola()
     Menu()
@@ -69,7 +73,7 @@ def mostrarOrden():
         limpiarConsola()
         Menu()
     x = Ordenes.enviarCola()
-    size = 1
+    size = 0
     for i in x:
         size += 1
         print(str(size)+'. Oden: Pizza de ' + str(i.item))

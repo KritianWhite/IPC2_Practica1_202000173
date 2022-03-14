@@ -8,14 +8,14 @@ class listaTiempo:
     def vacioT(self):
         return self.primero == None
 
-    def AgregarT(self, item):
+    def AgregarT(self, tiempo):
         if self.vacio():
-            self.primero = self.ultimo = nodoTiempo(item)
+            self.primero = self.ultimo = nodoTiempo(tiempo)
             return
         temporal = self.primero
         while temporal:
             if temporal.siguiente == None:
-                temporal.siguiente = self.ultimo = nodoTiempo(item)
+                temporal.siguiente = self.ultimo = nodoTiempo(tiempo)
                 self.ultimo.anterior = temporal
                 return
             temporal = temporal.siguiente
